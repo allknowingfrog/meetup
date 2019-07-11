@@ -1,0 +1,8 @@
+default: &default
+  group: default
+  user: default
+
+destroyable:
+  <<: *default
+  group: destroyable
+  user: destroyable

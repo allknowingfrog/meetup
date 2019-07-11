@@ -1,0 +1,14 @@
+.mb-3.text-right= link_to 'New', new_group_path, class: 'btn btn-primary'
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Group
+      %th Organizers
+      %th
+  %tbody
+    - @groups.each do |group|
+      %tr
+        %td= group.name
+        %td= group.organizers.collect { |o| o.full_name }.join(', ')
+        %td.text-right= link_to 'Show', group

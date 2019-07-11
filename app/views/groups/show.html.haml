@@ -1,0 +1,16 @@
+.row
+  .col-9
+    %h1= @group.name || 'New Group'
+  .col.text-right
+    = link_to 'Back', groups_path, class: 'btn btn-light'
+    = link_to 'Edit', edit_group_path(@group), class: 'btn btn-primary'
+
+.mt-3
+  %h2 Organizers
+  = render partial: 'user', collection: @users['organizer'] 
+
+  %h2 Presenters
+  = render partial: 'user', collection: @users['presenter'] 
+
+  %h2 Participants
+  = render partial: 'user', collection: @users['participant'] 

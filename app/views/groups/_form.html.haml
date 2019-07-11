@@ -1,0 +1,10 @@
+= form_with model: @group do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+
+  .row
+    .col= yield
+    .col.text-right
+      = link_to 'Cancel', @group, class: 'btn btn-light'
+      = f.submit 'Save', class: 'btn btn-primary'
