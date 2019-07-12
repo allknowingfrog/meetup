@@ -1,4 +1,4 @@
-FROM ruby
+FROM ruby:2.6.3
 
 RUN apt-get update -y && apt-get install -y gnupg2
 
