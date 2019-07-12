@@ -5,4 +5,9 @@ class GroupUserTest < ActiveSupport::TestCase
     group_user = group_users(:default)
     assert group_user.save
   end
+
+  test "should not duplicate" do
+    group_user = group_users(:default)
+    assert_raises(ActiveRecord::RecordNotUnique) { group_user.dup.save }
+  end
 end
