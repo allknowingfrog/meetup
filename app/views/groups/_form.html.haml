@@ -1,4 +1,7 @@
 = form_with model: @group do |f|
+  - @group.errors.full_messages.each do |message|
+    .alert.alert-danger{role: 'alert'}= message
+
   .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control'

@@ -23,7 +23,6 @@ class GroupsController < ApplicationController
     @group.group_users.includes(:user).each do |group_user|
       @users[group_user.role] << group_user.user
     end
-    logger.debug @users
   end
 
   def edit

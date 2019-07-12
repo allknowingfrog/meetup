@@ -39,7 +39,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy" do
     assert_difference('Group.count', -1) do
-      delete group_url(@group)
+      delete group_url(groups(:destroyable))
     end
     assert_redirected_to groups_url
   end
