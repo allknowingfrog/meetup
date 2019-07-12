@@ -12,7 +12,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %nav.navbar.navbar-dark.bg-dark.mb-3
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-3
       %a.navbar-brand{href: '/'} Meetup
+      %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbar'}}
+        %span.navbar-toggler-icon
+      #navbar.collapse.navbar-collapse
+        .navbar-nav
+          = link_to 'Groups', groups_path, class: 'nav-item nav-link'
+          = link_to 'CSV Upload', new_upload_path, class: 'nav-item nav-link'
+
+    - if flash.key?(:notice)
+      .alert.alert-info{role: 'alert'}= flash[:notice]
 
     .container= yield

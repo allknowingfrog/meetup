@@ -1,0 +1,7 @@
+%h1 CSV Upload
+
+= form_with url: uploads_path, local: true do |f|
+  .form-group
+    = f.file_field :csv
+  .form-group
+    = f.submit 'Upload', class: 'btn btn-primary'
